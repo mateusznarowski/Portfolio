@@ -7,8 +7,8 @@
 #### Frontend of the site was written in ReactJS and SCSS to write to CSS code, used icons from https://fontawesome.com/
 
 - used fonts:
-  - [Lora](https://fonts.google.com/specimen/Lora)
   - [Poppins](https://fonts.google.com/specimen/Poppins)
+  - [Lora](https://fonts.google.com/specimen/Lora)
 
 ---
 
