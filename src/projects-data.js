@@ -5,7 +5,7 @@ export default [
     title: 'Tenzies',
     desc: 'Win the game when all dice have the same number of dots.',
     screens: ['tenzies', 'tenzies-show'],
-    page: 'https://malelus.github.io/Tenzies',
+    page: 'https://malelus-tenzies.netlify.app/',
     github: 'https://github.com/Malelus/Tenzies',
   },
   {
@@ -14,7 +14,7 @@ export default [
     title: 'Quizzical',
     desc: 'Test your knowledge in different categories.',
     screens: ['quizzical', 'quizzical-show'],
-    page: 'https://malelus.github.io/Quizzical',
+    page: 'https://malelus-quizzical.netlify.app/',
     github: 'https://github.com/Malelus/Quizzical',
   },
   {
@@ -23,7 +23,7 @@ export default [
     title: 'Task Tracker',
     desc: 'Easy to use application to create tasks.',
     screens: ['task-tracker', 'task-tracker-show'],
-    page: 'https://malelus.github.io/TaskTracker',
+    page: 'https://malelus-task-tracker.netlify.app/',
     github: 'https://github.com/Malelus/TaskTracker',
   },
   {
