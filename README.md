@@ -1,6 +1,6 @@
 # Portfolio
 
-> ### [Page link](https://malelus.github.io/Portfolio/)
+> ### [Page link](https://malelus-portfolio.netlify.app/)
 
 ---
 
