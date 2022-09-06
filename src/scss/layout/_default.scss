@@ -299,6 +299,8 @@ body::-webkit-scrollbar-thumb {
 
 .project {
   --size: min(40vw, 325px);
+  max-width: 1000px;
+  margin: 0 auto;
 
   & + & {
     margin-top: 3rem;
@@ -306,6 +308,8 @@ body::-webkit-scrollbar-thumb {
 
   &-group {
     --size: fit-content;
+    max-width: 1000px;
+    margin: 0 auto;
 
     padding-block: 0.5rem;
 

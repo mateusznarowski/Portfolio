@@ -59,6 +59,10 @@ ul {
   list-style: none;
 }
 
+code {
+  line-height: 1.25em;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -378,12 +382,16 @@ body::-webkit-scrollbar-thumb {
 
 .project {
   --size: min(40vw, 325px);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .project + .project {
   margin-top: 3rem;
 }
 .project-group {
   --size: fit-content;
+  max-width: 1000px;
+  margin: 0 auto;
   padding-block: 0.5rem;
 }
 .project-group + .project-group {

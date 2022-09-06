@@ -24,10 +24,10 @@ const Project = ({ single, title, group_title, desc, group_desc, screens, page, 
           <p className='project__desc'>{desc}</p>
 
           <div className='project__links'>
-            <a href={page} target='_blank' className='btn'>
-              <i className='fa-solid fa-up-right-from-square' />
+            <a href={page} target='_blank' title='Page link' className='btn'>
+              <i className='fa-solid fa-globe' />
             </a>
-            <a href={github} target='_blank' className='btn'>
+            <a href={github} target='_blank' title='GitHub link' className='btn'>
               <i className='fa-brands fa-github' />
             </a>
           </div>
@@ -63,10 +63,10 @@ const Project = ({ single, title, group_title, desc, group_desc, screens, page, 
                   <p className='project__desc'>{desc[index]}</p>
 
                   <div className='project__links'>
-                    <a href={page[index]} target='_blank' className='btn'>
-                      <i className='fa-solid fa-up-right-from-square' />
+                    <a href={page[index]} target='_blank' title='Page link' className='btn'>
+                      <i className='fa-solid fa-globe' />
                     </a>
-                    <a href={github[index]} target='_blank' className='btn'>
+                    <a href={github[index]} target='_blank' title='GitHub link' className='btn'>
                       <i className='fa-brands fa-github' />
                     </a>
                   </div>
