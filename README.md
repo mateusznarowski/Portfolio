@@ -4,7 +4,7 @@
 
 ---
 
-#### Frontend of the site was written in ReactJS and SCSS to write to CSS code, used icons from https://fontawesome.com/
+#### The project was built using vite, frontend of the site was written in ReactJS and SCSS to write to CSS code, used icons from https://fontawesome.com/
 
 - used fonts:
   - [Poppins](https://fonts.google.com/specimen/Poppins)

@@ -11,8 +11,7 @@ const SkeletonLoader = ({ src, alt, width, aspectRatio, insertClass = '' }) => {
       src={src}
       alt={alt}
       onLoad={() => setIsLoaded(true)}
-      className={insertClass}
-      style={isLoaded ? {} : { display: 'none' }}
+      className={`skeleton-image ${isLoaded ? 'skeleton-image--visible' : ''} ${insertClass}`}
     />
   );
 

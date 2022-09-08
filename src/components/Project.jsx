@@ -7,7 +7,7 @@ const printScreens = (screens) =>
       key={index}
       src={`/projects/${screen}.png`}
       alt={screen}
-      width='min(78vw, 450px)'
+      width='var(--width)'
       aspectRatio='2 / 1'
       insertClass={`project__screen project__screen-${index + 1}`}
     />
@@ -29,7 +29,7 @@ const Project = ({ single, title, group_title, desc, group_desc, screens, page, 
 
           setTimeout(() => {
             setShowProjects(true);
-          }, 250);
+          }, 400);
         }
       }, 150);
     };
@@ -78,7 +78,7 @@ const Project = ({ single, title, group_title, desc, group_desc, screens, page, 
 
         <section
           className={`projects-group__collapse ${showProjects ? 'projects-group__collapse--visible' : ''}`}
-          style={showProjects ? { height: collapse.current.scrollHeight } : { height: '0' }}
+          style={showProjects ? { height: `${collapse.current.scrollHeight}px` } : { height: '0' }}
           ref={collapse}
         >
           {title.map((title, index) => {

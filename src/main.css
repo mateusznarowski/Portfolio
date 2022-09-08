@@ -223,11 +223,10 @@ body {
   border-radius: 0;
 }
 .skeleton-image {
-  opacity: 0;
-  transition: opacity var(--transition-duration) ease-in-out;
+  display: none;
 }
 .skeleton-image--visible {
-  opacity: 1;
+  display: block;
 }
 
 .nav {
@@ -439,6 +438,7 @@ body {
 }
 
 .project {
+  --height: min(40vw, 325px);
   --width: min(78vw, 450px);
   --aspect-ratio: 2 / 1;
   max-width: 1000px;
@@ -448,7 +448,8 @@ body {
   margin-top: 3rem;
 }
 .project-group {
-  --width: fit-content;
+  --height: fit-content;
+  --width: min(78vw, 450px);
   max-width: 1000px;
   margin: 0 auto;
   padding-block: 0.5rem;
@@ -458,14 +459,12 @@ body {
 }
 .project__screens {
   position: relative;
+  height: var(--height);
   width: var(--width);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   max-width: 450px;
 }
 .project__screen {
-  max-width: 100%;
+  max-width: auto;
   aspect-ratio: var(--aspect-ratio);
   background-color: var(--dark-clr);
   outline: var(--line) solid var(--outline-clr);
@@ -475,7 +474,7 @@ body {
 }
 .project__screen-2 {
   position: absolute;
-  height: calc(var(--width) * 0.25);
+  height: calc(var(--height) * 0.5);
   right: -1.5rem;
   bottom: -1.5rem;
   max-width: -webkit-max-content;
