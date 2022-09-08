@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SkeletonLoader from './SkeletonLoader';
 
 const printScreens = (screens) =>
@@ -16,6 +16,30 @@ const printScreens = (screens) =>
 const Project = ({ single, title, group_title, desc, group_desc, screens, page, github }) => {
   const [showProjects, setShowProjects] = useState(false);
   const collapse = useRef();
+
+  useEffect(() => {
+    let resizeTimeout = null;
+
+    const watchWindowResize = () => {
+      clearTimeout(resizeTimeout);
+
+      resizeTimeout = setTimeout(() => {
+        if (showProjects) {
+          setShowProjects(false);
+
+          setTimeout(() => {
+            setShowProjects(true);
+          }, 250);
+        }
+      }, 150);
+    };
+
+    window.addEventListener('resize', watchWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', watchWindowResize);
+    };
+  }, []);
 
   if (single) {
     return (
@@ -54,7 +78,7 @@ const Project = ({ single, title, group_title, desc, group_desc, screens, page, 
 
         <section
           className={`projects-group__collapse ${showProjects ? 'projects-group__collapse--visible' : ''}`}
-          style={showProjects ? { height: `${collapse.current.scrollHeight}px` } : { height: '0' }}
+          style={showProjects ? { height: collapse.current.scrollHeight } : { height: '0' }}
           ref={collapse}
         >
           {title.map((title, index) => {

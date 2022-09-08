@@ -46,7 +46,7 @@ const navbar = ({ darkTheme, toggleTheme }) => {
 
           <li className='nav__list-item nav__list-item--last'>
             <button onClick={() => toggleTheme((prev) => !prev)} className='nav__list-link nav__list-theme-toggle btn'>
-              {darkTheme ? <i className='fa-regular fa-sun' /> : <i className='fa-regular fa-moon' />}
+              {darkTheme ? <i className='fa-solid fa-moon' /> : <i className='fa-solid fa-sun' />}
             </button>
           </li>
 

@@ -140,6 +140,11 @@ body.dark {
 }
 
 .btn {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   background-color: var(--dark-clr);
   border: none;
@@ -147,6 +152,7 @@ body.dark {
   box-shadow: 5px 5px 0 var(--accent-clr);
   color: var(--light-clr);
   font-family: inherit;
+  font-size: 1rem;
   padding: 0.5em 1em;
   transition: box-shadow 250ms ease-in-out;
 }
@@ -159,9 +165,6 @@ body.dark {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-.btn--small {
-  font-size: 0.5rem;
 }
 .btn:hover, .btn:focus {
   box-shadow: 7.5px 7.5px 0 var(--accent-clr);
@@ -432,10 +435,11 @@ body {
 .projects-group__collapse--visible {
   opacity: 1;
   visibility: visible;
+  overflow-y: visible;
 }
 
 .project {
-  --height: min(40vw, 325px);
+  --width: min(78vw, 450px);
   --aspect-ratio: 2 / 1;
   max-width: 1000px;
   margin: 0 auto;
@@ -444,7 +448,7 @@ body {
   margin-top: 3rem;
 }
 .project-group {
-  --height: fit-content;
+  --width: fit-content;
   max-width: 1000px;
   margin: 0 auto;
   padding-block: 0.5rem;
@@ -454,7 +458,7 @@ body {
 }
 .project__screens {
   position: relative;
-  height: var(--height);
+  width: var(--width);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -471,7 +475,7 @@ body {
 }
 .project__screen-2 {
   position: absolute;
-  height: calc(var(--height) * 0.5);
+  height: calc(var(--width) * 0.25);
   right: -1.5rem;
   bottom: -1.5rem;
   max-width: -webkit-max-content;

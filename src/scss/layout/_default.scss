@@ -335,13 +335,14 @@ body {
       &--visible {
         opacity: 1;
         visibility: visible;
+        overflow-y: visible;
       }
     }
   }
 }
 
 .project {
-  --height: min(40vw, 325px);
+  --width: min(78vw, 450px);
   --aspect-ratio: 2 / 1;
 
   max-width: 1000px;
@@ -352,7 +353,7 @@ body {
   }
 
   &-group {
-    --height: fit-content;
+    --width: fit-content;
     max-width: 1000px;
     margin: 0 auto;
     padding-block: 0.5rem;
@@ -364,7 +365,7 @@ body {
 
   &__screens {
     position: relative;
-    height: var(--height);
+    width: var(--width);
     width: fit-content;
     max-width: 450px;
   }
@@ -381,7 +382,7 @@ body {
 
     &-2 {
       position: absolute;
-      height: calc(var(--height) * 0.5);
+      height: calc(var(--width) * 0.25);
       right: -1.5rem;
       bottom: -1.5rem;
       max-width: max-content;

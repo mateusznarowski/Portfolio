@@ -9,10 +9,12 @@ import Footer from './components/Footer';
 import projectsData from './projects-data';
 
 const App = () => {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(() => JSON.parse(localStorage.getItem('darkTheme')) || false);
 
   useEffect(() => {
     document.body.classList.toggle('dark', darkTheme);
+
+    localStorage.setItem('darkTheme', JSON.stringify(darkTheme));
   }, [darkTheme]);
 
   const toggleTheme = () => {
