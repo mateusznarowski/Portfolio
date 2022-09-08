@@ -21,15 +21,21 @@
 | < 768px                                                                                             | 768px - 999px                                                                                    | > 1000px                                                                 |
 | View adapted for use on a smartphone, hamburger menu (expandable navigation) (initial site design), | Mobile view, fixed navigation bar on top, fonts resize and fit of animations for larger screens, | Desktop view , fonts resize and fit of animations for desktop computers. |
 
+- button in the navigation bar for changing the site's theme,
+
 - navigation links navigating to the corresponding section on the page, from [react-scroll](https://www.npmjs.com/package/react-scroll),
 
 - non-react projects section is visible after pressing the button,
+
+- images when they are initially loaded are replaced with their skeleton using [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton), when the image loads it is displayed,
 
 - when you press the email address, this one will copy to the clipboard and you will see a message informing you about it.
 
 #### Look:
 
 - changed scrollbar design,
+
+- changed text selection design,
 
 #### Extras:
 

@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
 import { Link as ScrollTo } from 'react-scroll';
 
-const navbar = () => {
+const navbar = ({ darkTheme, toggleTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const scroll = { smooth: true, offset: -96, duration: 250 };
@@ -41,6 +42,12 @@ const navbar = () => {
             <ScrollTo to='contact' {...scroll} onClick={() => setShowMenu(false)} className='nav__list-link btn'>
               Contact
             </ScrollTo>
+          </li>
+
+          <li className='nav__list-item nav__list-item--last'>
+            <button onClick={() => toggleTheme((prev) => !prev)} className='nav__list-link nav__list-theme-toggle btn'>
+              {darkTheme ? <i className='fa-regular fa-sun' /> : <i className='fa-regular fa-moon' />}
+            </button>
           </li>
 
           {showMenu && (

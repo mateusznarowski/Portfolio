@@ -1,12 +1,15 @@
 import { useRef, useState } from 'react';
+import SkeletonLoader from './SkeletonLoader';
 
-const printScreens = (screens, single = true) =>
+const printScreens = (screens) =>
   screens.map((screen, index) => (
-    <img
+    <SkeletonLoader
       key={index}
       src={`/projects/${screen}.png`}
       alt={screen}
-      className={`project__screen project__screen-${index + 1}`}
+      width='min(78vw, 450px)'
+      aspectRatio='2 / 1'
+      insertClass={`project__screen project__screen-${index + 1}`}
     />
   ));
 
@@ -57,7 +60,7 @@ const Project = ({ single, title, group_title, desc, group_desc, screens, page, 
           {title.map((title, index) => {
             return (
               <article key={index} className='project-group'>
-                <div className='project__screens'>{printScreens(screens[index], false)}</div>
+                <div className='project__screens'>{printScreens(screens[index])}</div>
                 <div className='project-content'>
                   <h4 className='project__title'>{title}</h4>
                   <p className='project__desc'>{desc[index]}</p>

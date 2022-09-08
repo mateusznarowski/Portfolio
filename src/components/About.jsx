@@ -1,8 +1,10 @@
+import SkeletonLoader from './SkeletonLoader';
+
 const About = () => {
   return (
     <section id='about' className='section about'>
       <div className='about__photo'>
-        <img src='/profile_picture.png' alt='Profile picture' />
+        <SkeletonLoader src='/profile_picture.png' alt='Profile picture' width={'300px'} aspectRatio={'1653 / 2125'} />
         <span />
       </div>
       <div className='about__text'>

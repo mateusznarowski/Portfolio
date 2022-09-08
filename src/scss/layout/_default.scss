@@ -15,12 +15,27 @@
   --line: 3px;
 }
 
-//===// Container //===//
+//===// Scrollbar //===//
 
-.container {
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
+::-webkit-scrollbar {
+  width: 0.8rem;
+  border-left: var(--line) solid color(dark-clr);
+  outline: var(--line) solid color(accent-clr);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color(dark-clr);
+}
+
+//===// Text selection //===//
+
+::selection {
+  background-color: color(accent-clr);
+  color: color(light-clr);
 }
 
 //===// Body //===//
@@ -32,18 +47,37 @@ body {
   line-height: 1.5;
 }
 
-body::-webkit-scrollbar {
-  width: 0.8rem;
-  border-left: var(--line) solid color(dark-clr);
-  outline: var(--line) solid color(accent-clr);
+//===// Container //===//
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-body::-webkit-scrollbar-track {
-  background: transparent;
-}
+//===// Skeleton Loader //===//
 
-body::-webkit-scrollbar-thumb {
-  background: color(dark-clr);
+.skeleton {
+  &-container {
+    position: relative;
+    outline: var(--line) solid color(outline-clr);
+
+    &__loader {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 0;
+    }
+  }
+
+  &-image {
+    opacity: 0;
+    transition: opacity var(--transition-duration) ease-in-out;
+
+    &--visible {
+      opacity: 1;
+    }
+  }
 }
 
 //===// Navbar //===//
@@ -68,7 +102,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   &__logo {
-    --size: 0.1875em;
+    --placement: 0.1875em;
 
     position: relative;
     cursor: pointer;
@@ -85,15 +119,15 @@ body::-webkit-scrollbar-thumb {
     right: 0.8em;
     bottom: 0.25em;
     z-index: -1;
-    border: var(--size) solid color(dark-clr);
+    border: var(--placement) solid color(dark-clr);
   }
 
   &__logo::after {
     content: '';
     position: absolute;
-    inset: calc(var(--size) + 0.25em);
-    top: calc(var(--size) + 0.35em);
-    bottom: calc(var(--size) + 0.35em);
+    inset: calc(var(--placement) + 0.25em);
+    top: calc(var(--placement) + 0.35em);
+    bottom: calc(var(--placement) + 0.35em);
     z-index: -1;
     background-color: color(light-clr);
   }
@@ -120,7 +154,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   &-close {
-    position: absolute;
+    position: fixed;
     inset: 0;
     right: 20vw;
     z-index: 1;
@@ -172,6 +206,13 @@ body::-webkit-scrollbar-thumb {
       }
     }
 
+    &-theme-toggle {
+      position: absolute;
+      right: 6rem;
+      bottom: 1rem;
+      line-height: 36px;
+    }
+
     &-scroll {
       position: absolute;
       right: 1rem;
@@ -215,6 +256,8 @@ body::-webkit-scrollbar-thumb {
 //===// About //===//
 
 .about {
+  --line: 5px;
+
   &__photo {
     position: relative;
     height: 100%;
@@ -222,15 +265,15 @@ body::-webkit-scrollbar-thumb {
     max-width: 300px;
     margin-inline: auto;
 
-    & img {
-      border: 5px solid color(dark-clr);
+    & > img {
+      outline: var(--line) solid color(outline-clr);
     }
 
-    & span {
-      --size: 1.5rem;
+    & > span {
+      --placement: 1.5rem;
 
       position: absolute;
-      inset: var(--size) calc(var(--size) * -1) calc(var(--size) * -1) var(--size);
+      inset: var(--placement) calc(var(--placement) * -1) calc(var(--placement) * -1) var(--placement);
       z-index: -1;
       background-color: color(accent-clr);
     }
@@ -298,7 +341,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .project {
-  --size: min(40vw, 325px);
+  --height: min(40vw, 325px);
+  --aspect-ratio: 2 / 1;
+
   max-width: 1000px;
   margin: 0 auto;
 
@@ -307,10 +352,9 @@ body::-webkit-scrollbar-thumb {
   }
 
   &-group {
-    --size: fit-content;
+    --height: fit-content;
     max-width: 1000px;
     margin: 0 auto;
-
     padding-block: 0.5rem;
 
     & + & {
@@ -320,15 +364,16 @@ body::-webkit-scrollbar-thumb {
 
   &__screens {
     position: relative;
-    height: var(--size);
+    height: var(--height);
     width: fit-content;
     max-width: 450px;
   }
 
   &__screen {
+    max-width: 100%;
+    aspect-ratio: var(--aspect-ratio);
     background-color: color(dark-clr);
-    border: var(--line) solid color(dark-clr);
-    object-fit: cover;
+    outline: var(--line) solid color(outline-clr);
 
     &-1 {
       width: auto;
@@ -336,9 +381,10 @@ body::-webkit-scrollbar-thumb {
 
     &-2 {
       position: absolute;
-      height: calc(var(--size) * 0.5);
+      height: calc(var(--height) * 0.5);
       right: -1.5rem;
       bottom: -1.5rem;
+      max-width: max-content;
     }
   }
 

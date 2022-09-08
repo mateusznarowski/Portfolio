@@ -2,8 +2,30 @@
 //===// Colors //===//
 //==================//
 
+body {
+  --light-clr: hsl(32 100% 92%);
+  --dark-clr: hsl(208 68% 16%);
+
+  --light-accent-clr: hsl(32 100% 84%);
+  --dark-accent-clr: hsl(208 68% 22%);
+
+  --outline-clr: hsl(208 68% 16%);
+  --accent-clr: hsl(20 56% 58%);
+}
+
+body.dark {
+  --light-clr: hsl(208 24% 28%);
+  --dark-clr: hsl(32 100% 92%);
+
+  --dark-accent-clr: hsl(32 100% 84%);
+  --light-accent-clr: hsl(208 24% 36%);
+
+  --outline-clr: hsl(208 24% 28%);
+}
+
 $color: (
-  'light-clr': hsl(32 100% 92%),
-  'dark-clr': hsl(208 68% 16%),
-  'accent-clr': hsl(20 56% 58%),
+  'light-clr': var(--light-clr),
+  'dark-clr': var(--dark-clr),
+  'accent-clr': var(--accent-clr),
+  'outline-clr': var(--outline-clr),
 );

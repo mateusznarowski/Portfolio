@@ -25,6 +25,16 @@
       border-left: none;
       transform: translateX(0);
 
+      &-item {
+        &--first {
+          margin-top: unset;
+        }
+
+        &--last {
+          margin-bottom: unset;
+        }
+      }
+
       &-link {
         background-color: color(dark-clr);
         box-shadow: 5px 5px 0 color(accent-clr);
@@ -36,6 +46,11 @@
         &:focus {
           box-shadow: 7.5px 7.5px 0 color(accent-clr);
         }
+      }
+
+      &-theme-toggle {
+        position: static;
+        line-height: 28.8px;
       }
     }
   }
