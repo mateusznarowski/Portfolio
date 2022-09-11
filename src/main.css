@@ -229,7 +229,7 @@ body {
   display: block;
 }
 
-.nav {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -240,7 +240,8 @@ body {
   box-shadow: 0 var(--line) 0 var(--accent-clr);
   padding: 0.7em 1em;
 }
-.nav-container {
+
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -521,7 +522,7 @@ body {
   background-color: var(--dark-clr);
   transition: transform var(--transition-duration) ease-in-out;
 }
-.contact__email-text:hover::before {
+.contact__email-text:hover::before, .contact__email-text:focus::before {
   transform: scaleX(100%);
 }
 .contact__email-text::after {
@@ -532,16 +533,18 @@ body {
       -ms-user-select: none;
           user-select: none;
   opacity: 0;
+  visibility: hidden;
   background-color: var(--dark-clr);
   box-shadow: 5px 5px 0 var(--accent-clr);
   color: var(--light-clr);
   padding: 0.5em 1em;
   bottom: 1.5rem;
   right: -6.5rem;
-  transition: opacity var(--transition-duration) ease-in-out;
+  transition: opacity var(--transition-duration) ease-in-out, visibility var(--transition-duration) ease-in-out;
 }
 .contact .contact__email-text--copied.contact__email-text::after {
   opacity: 1;
+  visibility: visible;
 }
 .contact__links {
   display: flex;
@@ -575,11 +578,8 @@ body {
     border-left: none;
     transform: translateX(0);
   }
-  .nav__list-item--first {
-    margin-top: unset;
-  }
-  .nav__list-item--last {
-    margin-bottom: unset;
+  .nav__list-item--first, .nav__list-item--last {
+    margin: unset;
   }
   .nav__list-link {
     background-color: var(--dark-clr);

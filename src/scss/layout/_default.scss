@@ -79,9 +79,9 @@ body {
   }
 }
 
-//===// Navbar //===//
+//===// Header //===//
 
-.nav {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -91,14 +91,16 @@ body {
   border-bottom: var(--line) solid color(dark-clr);
   box-shadow: 0 var(--line) 0 color(accent-clr);
   padding: 0.7em 1em;
+}
 
-  &-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+//===// Navbar //===//
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 
   &__logo {
     --placement: 0.1875em;
@@ -440,7 +442,8 @@ body {
         transition: transform var(--transition-duration) ease-in-out;
       }
 
-      &:hover::before {
+      &:hover::before,
+      &:focus::before {
         transform: scaleX(100%);
       }
 
@@ -449,19 +452,21 @@ body {
         position: absolute;
         user-select: none;
         opacity: 0;
+        visibility: hidden;
         background-color: color(dark-clr);
         box-shadow: 5px 5px 0 color(accent-clr);
         color: color(light-clr);
         padding: 0.5em 1em;
         bottom: 1.5rem;
         right: -6.5rem;
-        transition: opacity var(--transition-duration) ease-in-out;
+        transition: opacity var(--transition-duration) ease-in-out, visibility var(--transition-duration) ease-in-out;
       }
     }
   }
 
   .contact__email-text--copied.contact__email-text::after {
     opacity: 1;
+    visibility: visible;
   }
 
   &__links {

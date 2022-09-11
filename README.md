@@ -21,7 +21,7 @@
 | < 768px                                                                                             | 768px - 999px                                                                                    | > 1000px                                                                 |
 | View adapted for use on a smartphone, hamburger menu (expandable navigation) (initial site design), | Mobile view, fixed navigation bar on top, fonts resize and fit of animations for larger screens, | Desktop view , fonts resize and fit of animations for desktop computers. |
 
-- button in the navigation bar for changing the site's theme, and theme of choice is stored in local storage,
+- button in the navigation bar to change the theme of the page, and the selected theme is saved to local storage,
 
 - navigation links navigating to the corresponding section on the page, from [react-scroll](https://www.npmjs.com/package/react-scroll),
 
@@ -35,7 +35,7 @@
 
 - changed scrollbar design,
 
-- changed text selection design,
+- changed text selection design.
 
 #### Extras:
 

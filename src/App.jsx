@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import Navbar from './components/Navbar';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import Header from './components/Header';
+import Main from './components/Main';
 import Footer from './components/Footer';
 
-import projectsData from './projects-data';
+import projectsData from './data/projects-data';
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(() => JSON.parse(localStorage.getItem('darkTheme')) || false);
@@ -23,12 +21,8 @@ const App = () => {
 
   return (
     <>
-      <Navbar darkTheme={darkTheme} toggleTheme={toggleTheme} />
-      <main className='container'>
-        <About />
-        <Projects projectsData={projectsData} />
-        <Contact />
-      </main>
+      <Header darkTheme={darkTheme} toggleTheme={toggleTheme} />
+      <Main projectsData={projectsData} />
       <Footer />
     </>
   );

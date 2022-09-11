@@ -25,14 +25,9 @@
       border-left: none;
       transform: translateX(0);
 
-      &-item {
-        &--first {
-          margin-top: unset;
-        }
-
-        &--last {
-          margin-bottom: unset;
-        }
+      &-item--first,
+      &-item--last {
+        margin: unset;
       }
 
       &-link {
