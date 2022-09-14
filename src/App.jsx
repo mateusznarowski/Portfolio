@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-import projectsData from './data/projects-data';
+import projectsData from './data/projects-data.json';
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(() => JSON.parse(localStorage.getItem('darkTheme')) || false);
