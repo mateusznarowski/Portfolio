@@ -5,6 +5,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 
 import projectsData from './data/projects-data.json';
+import contactData from './data/contact-data.json';
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(() => JSON.parse(localStorage.getItem('darkTheme')) || false);
@@ -22,7 +23,7 @@ const App = () => {
   return (
     <>
       <Header darkTheme={darkTheme} toggleTheme={toggleTheme} />
-      <Main projectsData={projectsData} />
+      <Main projectsData={projectsData} contactData={contactData} />
       <Footer />
     </>
   );

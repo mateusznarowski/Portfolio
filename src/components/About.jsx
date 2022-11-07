@@ -1,6 +1,6 @@
 import SkeletonLoader from './SkeletonLoader';
 
-const About = () => {
+const About = ({ contactData }) => {
   return (
     <section id='about' className='section about'>
       <div className='about__photo'>
@@ -19,18 +19,10 @@ const About = () => {
           developed the assigned projects and also created my own.
         </p>
         <div className='about__cv-download'>
-          <a
-            href='https://www.dropbox.com/s/w1cm0ldh9dp49oc/CV-Mateusz-Narowski-PL.pdf?dl=1'
-            title='CV Mateusz Narowski - PL'
-            className='btn btn--icon'
-          >
+          <a href={contactData.cv_pl} target='_blank' title='CV Mateusz Narowski - PL' className='btn btn--icon'>
             Download CV - PL <i className='fa-solid fa-file-arrow-down' />
           </a>
-          <a
-            href='https://www.dropbox.com/s/ir6bn7qikv589u9/CV-Mateusz-Narowski-EN.pdf?dl=1'
-            title='CV Mateusz Narowski - EN'
-            className='btn btn--icon'
-          >
+          <a href={contactData.cv_en} target='_blank' title='CV Mateusz Narowski - EN' className='btn btn--icon'>
             Download CV - EN <i className='fa-solid fa-file-arrow-down' />
           </a>
         </div>

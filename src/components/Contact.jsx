@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Contact = () => {
+const Contact = ({ contactData }) => {
   const [showAlert, setShowAlert] = useState(false);
 
   const copyEmail = (e, copy = true) => {
@@ -17,7 +17,7 @@ const Contact = () => {
     <section id='contact' className='section contact'>
       <h1 className='section__title'>Contact</h1>
       <div className='contact__email '>
-        <a href='mailto:matin1608@gmail.com' className='btn btn--icon'>
+        <a href={`mailto:${contactData.email}`} className='btn btn--icon'>
           Email Me
           <i className='fa-solid fa-envelope' />
         </a>
@@ -28,30 +28,22 @@ const Contact = () => {
           title='Click to copy!'
           className={`contact__email-text ${showAlert ? 'contact__email-text--copied' : ''}`}
         >
-          matin1608@gmail.com
+          {contactData.email}
         </span>
       </div>
       <div className='contact__links'>
-        <a href='https://github.com/Malelus' target='_blank' className='btn btn--icon'>
+        <a href={contactData.github} target='_blank' className='btn btn--icon'>
           Github <i className='fa-brands fa-github' />
         </a>
-        <a href='https://www.linkedin.com/in/mateusz-narowski/' target='_blank' className='btn btn--icon'>
+        <a href={contactData.linkedin} target='_blank' className='btn btn--icon'>
           LinkedIn <i className='fa-brands fa-linkedin' />
         </a>
       </div>
       <div className='contact__cv-download'>
-        <a
-          href='https://www.dropbox.com/s/w1cm0ldh9dp49oc/CV-Mateusz-Narowski-PL.pdf?dl=1'
-          title='CV Mateusz Narowski - PL'
-          className='btn btn--icon'
-        >
+        <a href={contactData.cv_pl} target='_blank' title='CV Mateusz Narowski - PL' className='btn btn--icon'>
           Download CV - PL <i className='fa-solid fa-file-arrow-down' />
         </a>
-        <a
-          href='https://www.dropbox.com/s/ir6bn7qikv589u9/CV-Mateusz-Narowski-EN.pdf?dl=1'
-          title='CV Mateusz Narowski - EN'
-          className='btn btn--icon'
-        >
+        <a href={contactData.cv_en} target='_blank' title='CV Mateusz Narowski - EN' className='btn btn--icon'>
           Download CV - EN <i className='fa-solid fa-file-arrow-down' />
         </a>
       </div>

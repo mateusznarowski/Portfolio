@@ -2,12 +2,12 @@ import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
 
-const Main = ({ projectsData }) => {
+const Main = ({ projectsData, contactData }) => {
   return (
     <main className='container'>
-      <About />
+      <About contactData={contactData} />
       <Projects projectsData={projectsData} />
-      <Contact />
+      <Contact contactData={contactData} />
     </main>
   );
 };
