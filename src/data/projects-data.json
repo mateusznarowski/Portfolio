@@ -40,7 +40,7 @@
     ],
     "screens": [["kpadew"], ["emoticons"], ["szurkowski"], ["vaccines"]],
     "page": [
-      "https://kpadew.mndev.eu",
+      "https://official-kpadew.mndev.eu",
       "https://emoticons.mndev.eu",
       "https://szurkowski.mndev.eu",
       "https://vaccines.mndev.eu"
