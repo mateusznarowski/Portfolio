@@ -1,8 +1,10 @@
-//===============================================//
-//===// Transmission of internal scss files //===//
-//===============================================//
+//===// Components //===//
 
-//===// Assets //===//
-
-@forward './hamburger';
 @forward './buttons';
+@forward './hamburger';
+@forward './color-mode';
+@forward './scroll-top';
+@forward './card';
+@forward './collapsible';
+@forward './pseudo';
+@forward './prop';

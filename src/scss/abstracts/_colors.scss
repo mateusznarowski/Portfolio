@@ -1,31 +1,19 @@
-//==================//
 //===// Colors //===//
-//==================//
-
-body {
-  --light-clr: hsl(32 100% 92%);
-  --dark-clr: hsl(208 68% 16%);
-
-  --light-accent-clr: hsl(32 100% 84%);
-  --dark-accent-clr: hsl(208 68% 22%);
-
-  --outline-clr: hsl(208 68% 16%);
-  --accent-clr: hsl(20 56% 58%);
-}
-
-body.dark {
-  --light-clr: hsl(208 24% 28%);
-  --dark-clr: hsl(32 100% 92%);
-
-  --dark-accent-clr: hsl(32 100% 84%);
-  --light-accent-clr: hsl(208 24% 36%);
-
-  --outline-clr: hsl(208 24% 28%);
-}
 
 $color: (
-  'light-clr': var(--light-clr),
-  'dark-clr': var(--dark-clr),
-  'accent-clr': var(--accent-clr),
-  'outline-clr': var(--outline-clr),
+  bg: var(--bg),
+  type: var(--type),
+  accent-100: var(--accent-100),
+  accent-300: var(--accent-300),
+  accent-500: var(--accent-500),
+  accent-700: var(--accent-700),
+  accent-900: var(--accent-900),
+  // For prop
+  accent-300-l: var(--accent-300-l),
+  accent-300-d: var(--accent-300-d),
+  accent-700-l: var(--accent-700-l),
+  accent-700-d: var(--accent-700-d),
+  // For contact form
+  success: var(--success),
+  danger: var(--danger),
 );

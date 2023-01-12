@@ -1,21 +1,15 @@
-//==========================================//
-//===// Incorporating other scss files //===//
-//==========================================//
-
-//===// Reset default styling //===//
+//===// Base styling //===//
 
 @use './base';
 
-//===// Setting variables //===//
-
-@use './abstracts';
-
-//===// Setting components //===//
+//===// Components //===//
 
 @use './components';
 
-//=======================================//
-//===// Importing responisve layout //===//
-//=======================================//
+//===// Utils //===//
+
+@use './utils';
+
+//===// Page layout //===//
 
 @use './layout';

@@ -1,6 +1,5 @@
-//===============================================//
-//===// Transmission of internal scss files //===//
-//===============================================//
+//===// Reset & setting color modes //===//
 
 @forward './reset';
-@forward './typography';
+@forward './color-pallete';
+@forward './sizes-pallete';

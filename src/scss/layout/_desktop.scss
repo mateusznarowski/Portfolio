@@ -1,80 +1,46 @@
-//================================================================//
-//===// Incorporating required desktop layout scss variables //===//
-//================================================================//
+//===// Abstracts //===//
 
 @use '../abstracts' as *;
 
-//=======================================//
-//===// Responsive layout - desktop //===//
-//=======================================//
+//==========================//
+//===// Desktop layout //===//
+//==========================//
 
 @include desktop {
+  //===// Hero //===//
+
+  #hero {
+    overflow: hidden;
+  }
+
+  .hero {
+    display: grid;
+    grid-template: repeat(5, auto) / repeat(2, 1fr);
+    grid-template-areas:
+      'intro intro'
+      'bio bio'
+      'bio-text-1 prop'
+      'bio-text-2 prop'
+      'cv .';
+
+    &__prop {
+      --x: calc(clamp(-6.175rem, calc(-10vw + 6rem), -1rem) + 0.3rem);
+      --y: calc(clamp(-6.175rem, calc(-10vw + 6rem), -1rem) + 7rem);
+
+      scale: 1.35;
+      translate: var(--x) var(--y);
+      // translate: 0 0;
+    }
+  }
+
+  //===// About //===//
+
   .about {
-    display: flex;
-    gap: 5rem;
-    margin-block: 2rem 4rem;
+    grid-template: repeat(1, auto) / repeat(3, 1fr);
+    grid-template-areas: 'card-1 card-2 card-3';
 
-    &__photo {
-      margin-block: auto;
-    }
-
-    &__title {
-      margin-block: 1.25rem 0.5rem;
-    }
-  }
-
-  //===// Projects //===//
-
-  .projects-group {
-    margin-top: 5rem;
-
-    &__show--active {
-      margin-bottom: 5rem;
-    }
-  }
-
-  .project {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    & + & {
-      margin-top: 5rem;
-    }
-
-    &:nth-child(odd) {
-      .project__screen-2 {
-        left: -1.5rem;
-        bottom: -1.5rem;
-      }
-
-      .project__title {
-        text-align: right;
-      }
-
-      .project-content > *:last-child {
-        justify-content: end;
-      }
-    }
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-
-      .project__screen-2 {
-        left: unset;
-        right: -1.5rem;
-        bottom: -1.5rem;
-      }
-    }
-
-    &-content {
-      margin-top: 0;
-      display: grid;
-      align-items: center;
-    }
-
-    &__desc {
-      margin-block: 1.5rem;
+    &__card:nth-child(1) header {
+      display: block;
     }
   }
 }

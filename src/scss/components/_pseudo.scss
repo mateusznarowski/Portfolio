@@ -1,0 +1,27 @@
+//===// Abstracts //===//
+
+@use '../abstracts' as *;
+
+//===// Pseudo //===//
+
+.copied {
+  position: relative;
+
+  &::before {
+    content: 'Copied! 📋';
+    position: absolute;
+    right: -6.25rem;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+    background-color: color(dark-clr);
+    transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+  }
+
+  &--true.copied::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}

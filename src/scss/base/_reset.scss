@@ -1,42 +1,63 @@
-//======================================//
-//===// Page default styling reset //===//
-//======================================//
-
-*:focus {
-  outline: none;
-}
+//===// Default styling reset //===//
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
-html {
-  box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 html,
 body {
-  min-height: 100%;
+  height: 100%;
 }
 
-//===========================================//
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
 //===// Reduce motion (System settings) //===//
-//===========================================//
 
 @media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
   *,
-  ::before,
-  ::after {
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
     animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
+    transition-duration: 0.01ms !important;
     transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+    background-attachment: initial !important;
   }
 }

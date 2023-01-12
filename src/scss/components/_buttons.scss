@@ -1,38 +1,51 @@
-//=========================================================//
-//===// Incorporating required buttons scss variables //===//
-//=========================================================//
+//===// Abstracts //===//
 
 @use '../abstracts' as *;
 
-//===================//
 //===// Buttons //===//
-//===================//
 
 .btn {
+  display: inline-block;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  background-color: color(dark-clr);
+  background-color: transparent;
   border: none;
+  border: 1px solid currentColor;
+  border-radius: 1.5em;
   outline: none;
-  box-shadow: 5px 5px 0 color(accent-clr);
-  color: color(light-clr);
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5em 1em;
-  transition: box-shadow 250ms ease-in-out;
+  color: color(type);
+  padding: 0.5em 0.85em;
+  font-size: size(fs-50);
+
+  &--squared {
+    background-color: color(accent-900);
+    border: none;
+    border-radius: 1em;
+    color: color(accent-100);
+    padding: 0.8em 1.2em;
+  }
+
+  &--cta {
+    background-color: color(accent-700);
+    border: 1px solid color(accent-900);
+    box-shadow: 7px 7px 0 color(accent-900);
+    border-radius: 1em;
+    color: color(accent-900);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8em 1.2em;
+    transition: box-shadow 250ms ease-in-out;
+
+    &:is(:hover, :focus) {
+      box-shadow: 5px 5px 0 color(accent-900);
+    }
+  }
 
   &--icon {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    width: fit-content;
-  }
-
-  &:hover,
-  &:focus {
-    box-shadow: 7.5px 7.5px 0 color(accent-clr);
+    justify-content: center;
+    gap: 0.8rem;
   }
 }

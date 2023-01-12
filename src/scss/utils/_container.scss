@@ -1,0 +1,25 @@
+//===// Abstracts //===//
+
+@use '../abstracts' as *;
+
+//===// Container //===//
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+
+  transition: width 250ms ease-in-out;
+}
+
+@include mobile {
+  .container {
+    width: 85%;
+  }
+}
+
+@include desktop {
+  .container {
+    width: 80%;
+  }
+}

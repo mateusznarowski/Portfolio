@@ -1,35 +1,44 @@
-//========================================================//
-//===// Incorporating required mixins scss variables //===//
-//========================================================//
+//===// Functions //===//
 
 @use './functions' as *;
 
-//==================//
 //===// Mixins //===//
-//==================//
 
-//===// Mobile layout //===//
+//=// Mobile layout
 
 @mixin mobile {
-  @media screen and (min-width: brake(mobile)) {
+  @media screen and (width >= brake(mobile)) {
     @content;
   }
 }
 
-//===// Desktop layout //===//
+//=// Desktop layout
 
 @mixin desktop {
-  @media screen and (min-width: brake(desktop)) {
+  @media screen and (width >= brake(desktop)) {
     @content;
   }
 }
 
-//===// Hamburger menu lines //===//
+//=// Hover & Focus outline offset
 
-@mixin hamburger-line {
-  position: absolute;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background-color: color(dark-clr);
+@mixin hf-offset {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+
+  &:is(:hover, :focus) {
+    outline: 2px solid color(accent-900);
+    outline-offset: 2px;
+  }
+}
+
+//=// Hover & Focus outline
+
+@mixin hf-outline {
+  outline: 2px solid transparent;
+  outline-offset: 6px;
+
+  &:is(:hover, :focus) {
+    outline: 2px solid color(accent-900);
+  }
 }

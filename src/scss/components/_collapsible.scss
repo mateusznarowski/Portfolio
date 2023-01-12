@@ -1,0 +1,13 @@
+.collapsible {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: hidden;
+  transition: height 250ms ease-in-out, opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    overflow-y: visible;
+  }
+}

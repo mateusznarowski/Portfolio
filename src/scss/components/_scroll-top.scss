@@ -1,0 +1,28 @@
+//===// Abstracts //===//
+
+@use '../abstracts' as *;
+
+//===// Scroll top //===//
+
+.scroll-top {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 4rem;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  translate: 10vw;
+  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out, translate 250ms ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    translate: 0;
+  }
+}
+
+@include mobile {
+  .scroll-top {
+    bottom: 5rem;
+  }
+}

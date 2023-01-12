@@ -1,0 +1,41 @@
+//===// Color mode //===//
+
+body {
+  --bg: hsl(39 83% 95%);
+  --type: hsl(238 34% 20%);
+
+  --accent-100: hsl(0 33% 99%);
+  --accent-300: hsl(176 40% 71%);
+  --accent-500: hsl(19 100% 85%);
+  --accent-700: hsl(41 98% 64%);
+  --accent-900: hsl(0 0% 20%);
+
+  --accent-300-l: hsl(176 40% 86%);
+  --accent-300-d: hsl(176 40% 54%);
+
+  --accent-700-l: hsl(41 98% 79%);
+  --accent-700-d: hsl(41 98% 49%);
+
+  --success: hsl(106, 42%, 57.5%);
+  --danger: hsl(0, 68%, 57.5%);
+}
+
+body.dark {
+  --bg: hsl(185 13% 40%);
+  --type: hsl(238 33% 16%);
+
+  --accent-100: hsl(52 50% 91%);
+  --accent-300: hsl(151 24% 60%);
+  --accent-500: hsl(13 68% 63%);
+  --accent-700: hsl(37 79% 75%);
+  --accent-900: hsl(210 16% 20%);
+
+  --accent-300-l: hsl(151 24% 75%);
+  --accent-300-d: hsl(151 24% 45%);
+
+  --accent-700-l: hsl(37 79% 90%);
+  --accent-700-d: hsl(37 79% 60%);
+
+  --success: hsl(106, 42%, 45%);
+  --danger: hsl(0, 58%, 45%);
+}

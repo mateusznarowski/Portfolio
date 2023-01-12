@@ -1,0 +1,75 @@
+//===// Abstracts //===//
+
+@use '../abstracts' as *;
+
+//===// Prop //===//
+
+.prop {
+  --prop-monitor: #{color(accent-500)};
+  --desk: #{color(accent-900)};
+  --outline: #{color(accent-100)};
+  --prop-200: #{color(accent-300-l)};
+  --prop-400: #{color(accent-700-l)};
+  --prop-500: #{color(accent-700)};
+  --prop-600: #{color(accent-700-d)};
+  --prop-800: #{color(accent-300)};
+  --prop-900: #{color(accent-300-d)};
+
+  &__desk {
+    fill: var(--desk, hsl(211, 13%, 31%));
+  }
+
+  &__shadow {
+    fill: var(--shadow, hsl(0, 0%, 52%));
+  }
+
+  &__outline {
+    fill: var(--outline, hsl(206, 5%, 75%));
+  }
+
+  &__monitor {
+    fill: var(--prop-monitor, hsl(198, 75%, 52%));
+
+    &-back-window {
+      fill: var(--prop-monitor-back-window, hsl(200, 2%, 69%));
+    }
+
+    &-stand {
+      fill: var(--prop-monitor-stand, hsl(240, 1%, 68%));
+    }
+  }
+
+  &__laptop {
+    fill: var(--prop-laptop, hsl(210, 1%, 47%));
+  }
+
+  &__accent {
+    &-100 {
+      fill: var(--prop-100, hsl(0, 0%, 100%));
+    }
+
+    &-200 {
+      fill: var(--prop-200, hsl(203, 21%, 79%));
+    }
+
+    &-400 {
+      fill: var(--prop-400, hsl(29, 84%, 64%));
+    }
+
+    &-500 {
+      fill: var(--prop-500, hsl(27, 83%, 58%));
+    }
+
+    &-600 {
+      fill: var(--prop-600, hsl(16, 100%, 61%));
+    }
+
+    &-800 {
+      fill: var(--prop-800, hsl(237, 52%, 71%));
+    }
+
+    &-900 {
+      fill: var(--prop-900, hsl(239, 44%, 58%));
+    }
+  }
+}

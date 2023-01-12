@@ -1,0 +1,71 @@
+{
+  "intro": {
+    "title": "See My Projects",
+    "text": "Check out the cool work i've done in past years. There are projects here ranging from school projects, hobbyist projects as well as projects I've learnt for from courses."
+  },
+  "projects": [
+    {
+      "badge": "Management",
+      "name": "Task Tracker",
+      "desc": "Keep track of your tasks the easy way!",
+      "techStack": ["ts", "react", "scss"],
+      "page": "https://task-tracker.mndev.eu",
+      "github": "https://github.mndev.eu/TaskTracker",
+      "preview": ["task-tracker.png", "task-tracker-show.png"]
+    },
+    {
+      "badge": "Game",
+      "name": "Tenzies",
+      "desc": "Select all dice with same number of dots!",
+      "techStack": ["js", "react", "scss"],
+      "page": "https://tenzies.mndev.eu",
+      "github": "https://github.mndev.eu/Tenzies",
+      "preview": ["tenzies.png", "tenzies-show.png"]
+    },
+    {
+      "badge": "Knowledge",
+      "name": "Quizzical",
+      "desc": "Test your knowledge of everything with our quiz app!",
+      "techStack": ["js", "react", "scss"],
+      "page": "https://quizzical.mndev.eu",
+      "github": "https://github.mndev.eu/Quizzical",
+      "preview": ["quizzical.png", "quizzical-show.png"]
+    },
+    {
+      "badge": "Minecraft",
+      "name": "Kwadratowa Padew",
+      "desc": "Minecraft server site of Kwadratowa Padew",
+      "techStack": ["js", "html", "scss"],
+      "page": "https://official-kpadew.mndev.eu",
+      "github": "https://github.mndev.eu/Project_KwadratowaPadew",
+      "preview": ["kpadew.png"]
+    },
+    {
+      "badge": "Emotions today",
+      "name": "Emoticons",
+      "desc": "A site about Emoticons and their importance in communication.",
+      "techStack": ["js", "html", "scss"],
+      "page": "https://emoticons.mndev.eu",
+      "github": "https://github.mndev.eu/Project_Emotikony",
+      "preview": ["emoticons.png"]
+    },
+    {
+      "badge": "Famous cyclist",
+      "name": "Ryszard Szurkowski",
+      "desc": "A site about cyclist Ryszard Szurkowski.",
+      "techStack": ["js", "html", "scss"],
+      "page": "https://szurkowski.mndev.eu",
+      "github": "https://github.mndev.eu/Project_RyszardSzurkowski",
+      "preview": ["szurkowski.png"]
+    },
+    {
+      "badge": "Vaccines",
+      "name": "Covid-19 Vaccines",
+      "desc": "A site about the types of vaccines for COVID-19.",
+      "techStack": ["js", "html", "scss"],
+      "page": "https://vaccines.mndev.eu",
+      "github": "https://github.mndev.eu/Project_SzczepionkiCovid",
+      "preview": ["vaccines.png"]
+    }
+  ]
+}

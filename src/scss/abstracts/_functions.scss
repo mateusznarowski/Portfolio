@@ -1,28 +1,31 @@
-//==============================================//
 //===// Incorporating dependent scss files //===//
-//==============================================//
 
 @use './brakepoints' as *;
 @use './fonts' as *;
+@use './sizes' as *;
 @use './colors' as *;
 
-//=============================//
 //===// Map get functions //===//
-//=============================//
 
-//===// Responsive layouts //===//
+//=// Responsive layouts
 
 @function brake($brakepoint) {
   @return map-get($brake, $brakepoint);
 }
 
-//===// Fonts //===//
+//=// Fonts
 
 @function font($font-name) {
   @return map-get($font, $font-name);
 }
 
-//===// Colors //===//
+//=// Sizes
+
+@function size($size-name) {
+  @return map-get($size, $size-name);
+}
+
+//=// Colors
 
 @function color($color-name) {
   @return map-get($color, $color-name);

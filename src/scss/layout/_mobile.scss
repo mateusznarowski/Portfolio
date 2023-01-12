@@ -1,162 +1,143 @@
-//===============================================================//
-//===// Incorporating required mobile layout scss variables //===//
-//===============================================================//
+//===// Abstracts //===//
 
 @use '../abstracts' as *;
 
-//======================================//
-//===// Responsive layout - mobile //===//
-//======================================//
+//=========================//
+//===// Mobile layout //===//
+//=========================//
 
 @include mobile {
-  //===// Navbar //===//
+  //===// Header //===//
+
+  .header {
+    --spacer: 1.5rem;
+  }
+
+  //===// Menu //===//
 
   .nav {
-    &-toggle {
+    all: unset;
+
+    &-open,
+    &-close {
       display: none;
     }
 
     &__list {
-      position: static;
+      all: unset;
+      list-style: none;
       display: flex;
-      opacity: 1;
-      visibility: visible;
-      background-color: transparent;
-      border-left: none;
-      transform: translateX(0);
-
-      &-item--first,
-      &-item--last {
-        margin: unset;
-      }
+      gap: 1.25rem;
 
       &-link {
-        background-color: color(dark-clr);
-        box-shadow: 5px 5px 0 color(accent-clr);
-        color: color(light-clr);
-        font-size: 1.2rem;
-        transition: box-shadow 250ms ease-in-out;
-
-        &:hover,
-        &:focus {
-          box-shadow: 7.5px 7.5px 0 color(accent-clr);
-        }
-      }
-
-      &-theme-toggle {
-        position: static;
-        line-height: 28.8px;
+        font-size: clamp(1.15rem, 2.6vw, 1.45rem);
       }
     }
   }
 
-  //===// Section //===//
+  //===// Hero //===//
 
-  .section {
-    margin-inline: auto;
-  }
-
-  .section:last-child {
-    margin-bottom: 3rem;
+  .hero {
+    margin-block-start: 1rem;
   }
 
   //===// About //===//
 
   .about {
-    &__title {
-      font-size: 1.65rem;
-    }
+    grid-template: repeat(2, auto) / repeat(2, 1fr);
+    grid-template-areas:
+      'card-1 card-1'
+      'card-2 card-3';
 
-    &__bio {
-      font-size: 1.3rem;
-    }
-
-    &__bio-text {
-      font-size: 1.075rem;
-    }
-
-    &__cv-download {
-      flex-direction: row;
-      font-size: 1.15rem;
+    &__card:nth-child(1) header {
+      display: flex;
+      gap: 1rem;
     }
   }
 
   //===// Projects //===//
 
   .projects {
-    &-group {
-      &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    padding-block-end: 6rem;
+
+    &__intro {
+      &__text {
+        max-width: 50ch;
       }
 
-      &__show--active {
-        margin-bottom: 3.5rem;
+      &__prop {
+        right: -4rem;
+        height: 12.5rem;
       }
+    }
 
-      &__title {
-        font-size: 1.5rem;
-      }
-
-      &__desc {
-        font-size: 1.075rem;
-      }
-
-      &__show {
-        font-size: 1.25rem;
-      }
+    &__btn {
+      margin-block-start: 5rem;
     }
   }
 
+  //===// Project //===//
+
   .project {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    grid-template: repeat(5, auto) / repeat(2, 1fr);
+    grid-template-areas: none;
+    gap: 0 clamp(1rem, 4vw, 4rem);
+    margin-block-start: 7rem;
 
-    &-group {
-      display: grid;
-      grid-auto-flow: column;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-      gap: 3rem;
+    &__badge {
+      grid-row: 1;
     }
 
-    &__screen {
-      &-2 {
-        left: -2.5rem;
-        bottom: 2rem;
-      }
-    }
-
-    &__title {
-      font-size: 1.5rem;
+    &__name {
+      grid-row: 2;
+      margin-block: 0.75rem 1rem;
     }
 
     &__desc {
-      font-size: 1.075rem;
+      grid-row: 3;
+      margin-block: 0 0.75rem;
+    }
+
+    &__stack {
+      grid-row: 4;
     }
 
     &__links {
-      font-size: 1.25rem;
+      grid-row: 5;
+      margin-block: 1.5rem 2rem;
+    }
+
+    &__preview {
+      grid-row: 1 / -1;
+    }
+
+    &:nth-child(odd) {
+      :is(.project__badge, .project__name, .project__desc, .project__stack, .project__links) {
+        grid-column: 1;
+      }
+
+      .project__preview {
+        grid-column: 2;
+      }
+    }
+
+    &:nth-child(even) {
+      :is(.project__badge, .project__name, .project__desc, .project__stack, .project__links) {
+        margin-inline-start: 3rem;
+        grid-column: 2;
+      }
+
+      .project__preview {
+        grid-column: 1;
+
+        --flip: -1;
+      }
     }
   }
 
   //===// Contact //===//
 
   .contact {
-    &__email {
-      flex-direction: row;
-
-      & > a {
-        margin-bottom: 0;
-        margin-right: 0.5rem;
-      }
-    }
-
-    &__cv-download {
-      flex-direction: row;
-    }
+    padding-block: 5rem;
   }
 }

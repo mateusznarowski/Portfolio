@@ -1,50 +1,49 @@
-//===========================================================//
-//===// Incorporating required hamburger scss variables //===//
-//===========================================================//
+//===// Abstracts //===//
 
 @use '../abstracts' as *;
 
-//=====================//
 //===// Hamburger //===//
-//=====================//
+
+@mixin hamburger-line {
+  position: absolute;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: color(accent-900);
+  border-radius: 1rem;
+}
 
 .hamburger {
   display: inline-block;
   cursor: pointer;
   background-color: transparent;
   border: 0;
-  padding: 10px;
-  margin: 0;
-  transition: transform 0.3s ease-in-out;
 
   &__box {
     display: inline-block;
     position: relative;
-    width: 35px;
-    height: 24px;
+    width: 2.125rem;
+    height: 1.5rem;
   }
 
   &__inner {
     top: 50%;
-    transform: translateY(-50%);
-    transition: background-color 0.1s ease-in-out;
 
     @include hamburger-line;
 
     &::before,
     &::after {
       content: '';
-      transition: transform 0.2s ease-in-out;
 
       @include hamburger-line;
     }
 
     &::before {
-      top: -10px;
+      top: -0.75rem;
     }
 
     &::after {
-      top: 10px;
+      top: 0.75rem;
     }
   }
 
@@ -53,10 +52,12 @@
   }
 
   &--active &__inner:before {
-    transform: translateY(10px) rotate(45deg);
+    translate: 0 0.75rem;
+    rotate: 45deg;
   }
 
   &--active &__inner:after {
-    transform: translateY(-10px) rotate(-45deg);
+    translate: 0 -0.75rem;
+    rotate: -45deg;
   }
 }

@@ -1,0 +1,18 @@
+{
+  "intro": {
+    "title": "Ways to get in touch with me",
+    "formText": "Message me below ✍️",
+    "emailText": "or feel free to write to this email",
+    "linksText": "You can also find me at:"
+  },
+  "contact": {
+    "email": "mateusz.narowski@mndev.eu",
+    "form": "https://formspree.io/f/mqkokorw",
+    "github": "https://github.mndev.eu",
+    "linkedin": "https://linkedin.mndev.eu",
+    "cv": {
+      "polish": "https://drive.google.com/file/d/1qmkmNQ1PGYqpqZeZLWmZC5CQFQM7Vw25/view",
+      "english": "https://drive.google.com/file/d/1E0bSumPmhfaMaCdHhbxv7CGfgz5atXVA/view"
+    }
+  }
+}

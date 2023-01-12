@@ -1,0 +1,46 @@
+{
+  "techStack": {
+    "icon": "fa-solid fa-layer-group fa-fw",
+    "title": "My Stack",
+    "stack": ["js", "ts", "react", "html", "css", "scss", "git"]
+  },
+  "certificates": {
+    "icon": "fa-solid fa-graduation-cap fa-fw",
+    "title": "My Certificates",
+    "links": [
+      {
+        "name": "Front-End Developer Career Path",
+        "url": "https://github.mndev.eu/Certificates/blob/main/Scrimba/The%20Frontend%20Developer%20Career%20Path"
+      },
+      {
+        "name": "Advanced React",
+        "url": "https://github.mndev.eu/Certificates/blob/main/Scrimba/Advanced%20React"
+      },
+      {
+        "name": "JavaScript deep dive",
+        "url": "https://github.mndev.eu/Certificates/blob/main/Scrimba/JavaScript%20deep%20dive"
+      },
+      {
+        "name": "Learn Responsive Web Design",
+        "url": "https://github.mndev.eu/Certificates/tree/main/Scrimba/Learn%20Responsive%20Web%20Design"
+      },
+      {
+        "name": "Learn UI Design",
+        "url": "https://github.mndev.eu/Certificates/tree/main/Scrimba/Learn%20UI%20Design"
+      },
+      {
+        "name": "React Hooks Simplified",
+        "url": "https://github.mndev.eu/Certificates/blob/main/Web%20Dev%20Simplified/React%20Hooks%20Simplified"
+      }
+    ]
+  },
+  "other": {
+    "icon": "fa-solid fa-book fa-fw",
+    "title": "More",
+    "text": [
+      "Additionally, I intend to further my training in UI/UX and Back-end (Node.js) in the near future.",
+      "In addition, I had the opportunity to work with:"
+    ],
+    "stack": ["mysql", "php"]
+  }
+}
