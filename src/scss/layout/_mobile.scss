@@ -139,5 +139,9 @@
 
   .contact {
     padding-block: 5rem;
+
+    &__form__btn {
+      width: auto;
+    }
   }
 }

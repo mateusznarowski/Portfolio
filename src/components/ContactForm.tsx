@@ -22,12 +22,12 @@ const statusMessages = {
   },
   error: {
     text: 'An error has occurred',
-    icon: <i className='fa-solid fa-xmark' />,
+    icon: <i className='fa-solid fa-circle-exclamation' />,
     className: 'error',
   },
   fullfill: {
     text: 'Complete the fields and try again',
-    icon: <i className='fa-solid fa-xmark' />,
+    icon: <i className='fa-solid fa-circle-exclamation' />,
     className: 'error',
   },
 };

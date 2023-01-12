@@ -468,6 +468,7 @@ body {
       border-block-end: 1px solid color(type);
       outline: none;
       color: color(type);
+      font-size: size(fs-50);
       padding: 0.5em;
 
       &.error {

@@ -45,7 +45,7 @@ const Contact = ({ content }: ContactProps) => {
           <h3 className='contact__title'>{intro.title}</h3>
 
           <p className='contact__text'>{intro.formText}</p>
-          <ContactForm url={'https://formspree.io/f/mvodyeag' ?? contact.form} />
+          <ContactForm url={contact.form} />
 
           <p className='contact__text'>{intro.emailText}</p>
           <span onClick={copyEmail} className={`contact__email | copied ${showIsCopied ? 'copied--true' : ''}`}>
