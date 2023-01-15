@@ -1,8 +1,9 @@
 {
   "intro": {
     "title": "See My Projects",
-    "text": "Check out the cool work i've done in past years. There are projects here ranging from school projects, hobbyist projects as well as projects I've learnt for from courses."
+    "text": "Check out the cool work I've done in past years. There are projects here ranging from school projects, hobbyist projects as well as projects I've learnt for from courses."
   },
+  "numberOfFeatured": 3,
   "projects": [
     {
       "badge": "Management",

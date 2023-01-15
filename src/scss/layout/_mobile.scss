@@ -58,7 +58,7 @@
   //===// Projects //===//
 
   .projects {
-    padding-block-end: 6rem;
+    padding-block-end: 6.5rem;
 
     &__intro {
       &__text {
@@ -72,7 +72,7 @@
     }
 
     &__btn {
-      margin-block-start: 5rem;
+      margin-block: 5rem 6.5rem;
     }
   }
 
@@ -127,6 +127,8 @@
         grid-column: 2;
       }
 
+      margin-inline: var(--border-size) 0;
+
       .project__preview {
         grid-column: 1;
 
@@ -140,8 +142,8 @@
   .contact {
     padding-block: 5rem;
 
-    &__form__btn {
-      width: auto;
+    &__form__btns__submit {
+      flex: initial;
     }
   }
 }

@@ -26,7 +26,7 @@ const statusMessages = {
     className: 'error',
   },
   fullfill: {
-    text: 'Complete the fields and try again',
+    text: 'Please fill out the entire form',
     icon: <i className='fa-solid fa-circle-exclamation' />,
     className: 'error',
   },
@@ -34,10 +34,11 @@ const statusMessages = {
 
 const ContactForm = ({ url }: { url: string }) => {
   const initialMessage = { name: '', email: '', message: '' };
+  const initialMessageValidity = { name: true, email: true, message: true };
 
   const [statusMessage, setStatusMessage] = useState(statusMessages.default);
   const [message, setMessage] = useState(initialMessage);
-  const [isValid, setFormValidity] = useState({ name: true, email: true, message: true });
+  const [isValid, setFormValidity] = useState(initialMessageValidity);
 
   const validateInput = (value: string, type: string = 'text') => {
     return type === 'email' ? value.trim() !== '' && testEmail(value) : value.trim() !== '';
@@ -75,14 +76,21 @@ const ContactForm = ({ url }: { url: string }) => {
     if (!validateForm(message).isFormValid) return setStatusMessage(statusMessages.fullfill);
 
     setSendMessage(true);
-    setTimeout(() => {
-      setSendMessage(false);
-    }, 0);
+    setTimeout(() => setSendMessage(false), 0);
+  };
+
+  const handleFormClear = () => {
+    setMessage(initialMessage);
+    setFormValidity(initialMessageValidity);
   };
 
   useEffect(() => {
     if (isLoading) {
       setStatusMessage(statusMessages.sending);
+    }
+
+    if (error) {
+      setStatusMessage(statusMessages.error);
     }
 
     if (data) {
@@ -91,11 +99,7 @@ const ContactForm = ({ url }: { url: string }) => {
 
       setTimeout(() => setStatusMessage(statusMessages.default), 3000);
     }
-
-    if (error) {
-      setStatusMessage(statusMessages.error);
-    }
-  }, [isLoading]);
+  }, [isLoading, data, error]);
 
   useEffect(() => {
     if (statusMessage.className === 'error') {
@@ -105,56 +109,47 @@ const ContactForm = ({ url }: { url: string }) => {
 
   return (
     <form onSubmit={handleSubmit} className='contact__form'>
-      <div>
-        {/* <label htmlFor='name' className='contact__form__label'>
-          Name
-        </label> */}
+      <input
+        type='text'
+        id='name'
+        name='name'
+        className={`contact__form__input ${!isValid.name ? 'error' : ''}`}
+        placeholder='Your name'
+        onChange={handleChange}
+        value={message.name}
+      />
 
-        <input
-          type='text'
-          id='name'
-          name='name'
-          className={`contact__form__input ${!isValid.name ? 'error' : ''}`}
-          placeholder='Your name'
-          onChange={handleChange}
-          value={message.name}
-        />
+      <input
+        type='email'
+        id='email'
+        name='email'
+        className={`contact__form__input ${!isValid.email ? 'error' : ''}`}
+        placeholder='you@company.com'
+        onChange={handleChange}
+        value={message.email}
+      />
+
+      <textarea
+        id='message'
+        name='message'
+        className={`contact__form__message ${!isValid.message ? 'error' : ''}`}
+        placeholder='How I can help you...'
+        onChange={handleChange}
+        value={message.message}
+      />
+
+      <div className='contact__form__btns'>
+        <button
+          className={`contact__form__btns__submit ${statusMessage.className} | btn btn--cta btn--icon`}
+          disabled={isLoading}
+        >
+          {statusMessage.text} {statusMessage.icon}
+        </button>
+
+        <button className='contact__form__btns__clear | btn btn--cta btn--icon' type='button' onClick={handleFormClear}>
+          <i className='fa-solid fa-arrows-rotate' />
+        </button>
       </div>
-
-      <div>
-        {/* <label htmlFor='email' className='contact__form__label'>
-          Email
-        </label> */}
-
-        <input
-          type='email'
-          id='email'
-          name='email'
-          className={`contact__form__input ${!isValid.email ? 'error' : ''}`}
-          placeholder='you@company.com'
-          onChange={handleChange}
-          value={message.email}
-        />
-      </div>
-
-      <div>
-        {/* <label htmlFor='message' className='contact__form__label'>
-          Message
-        </label> */}
-
-        <textarea
-          id='message'
-          name='message'
-          className={`contact__form__message ${!isValid.message ? 'error' : ''}`}
-          placeholder='How I can help you...'
-          onChange={handleChange}
-          value={message.message}
-        />
-      </div>
-
-      <button className={`contact__form__btn ${statusMessage.className} | btn btn--cta btn--icon`} disabled={isLoading}>
-        {statusMessage.text} {statusMessage.icon}
-      </button>
     </form>
   );
 };

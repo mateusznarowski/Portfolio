@@ -9,17 +9,17 @@ type ProjectsProps = {
       title: string;
       text: string;
     };
+    numberOfFeatured: number;
     projects: ProjectType[];
   };
-  numberOfFeatured?: number;
 };
 
 const renderProjects = (array: ProjectType[]) => {
   return array.map((project, index) => <Project project={project} key={index} />);
 };
 
-const Projects = ({ content, numberOfFeatured = 3 }: ProjectsProps) => {
-  const { intro, projects } = content;
+const Projects = ({ content }: ProjectsProps) => {
+  const { intro, numberOfFeatured, projects } = content;
 
   const [featuredProjects, restOfProjects] = [projects.slice(0, numberOfFeatured), projects.slice(numberOfFeatured)];
 
@@ -44,7 +44,7 @@ const Projects = ({ content, numberOfFeatured = 3 }: ProjectsProps) => {
             {restOfProjects.length > 0 && (
               <>
                 <button className='projects__btn | btn btn--cta btn--icon' onClick={() => setIsShown((prev) => !prev)}>
-                  {isShown ? 'Collapse Projects' : 'See All Projects'}
+                  {isShown ? 'Hide Projects' : 'See All Projects'}
                   <i className={`fa-solid fa-circle-chevron-${isShown ? 'up' : 'down'}`} />
                 </button>
 

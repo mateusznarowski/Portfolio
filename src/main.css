@@ -151,7 +151,7 @@ body {
   color: var(--accent-900);
   text-decoration: none;
   font-weight: 600;
-  padding: 0.8em 1.2em;
+  padding: 0.8em 1.4em;
   transition: box-shadow 250ms ease-in-out;
 }
 .btn--cta:is(:hover, :focus) {
@@ -401,6 +401,11 @@ body {
   --border-size: 0.625rem;
 }
 
+::selection {
+  background-color: var(--type);
+  color: var(--accent-300-l);
+}
+
 body {
   background-color: var(--bg);
   color: var(--type);
@@ -546,6 +551,7 @@ body {
   background-color: var(--accent-300);
   box-shadow: var(--border-size) var(--border-size) 0 var(--accent-900);
   border: 1px solid var(--accent-900);
+  margin-inline-end: var(--border-size);
 }
 .about__card:nth-child(2) {
   grid-area: card-2;
@@ -588,7 +594,7 @@ body {
 }
 
 .projects {
-  padding-block-end: 3rem;
+  padding-block-end: 3.5rem;
 }
 .projects__intro {
   display: inline-block;
@@ -613,14 +619,18 @@ body {
   rotate: -25deg;
 }
 .projects__btn {
-  margin-block-start: 4rem;
   margin-inline: auto;
+  margin-block-start: 4rem 3.5rem;
+}
+.projects:has(.projects__featured + .projects__btn) {
+  padding-block-end: 0rem;
 }
 
 .project {
   display: grid;
   grid-template-areas: "badge" "name" "preview" "desc" "stack" "links";
   margin-block-start: 4rem;
+  margin-inline-end: var(--border-size);
 }
 .project:nth-child(3n+1) {
   --accent: var(--accent-300);
@@ -760,19 +770,23 @@ body {
   height: 8rem;
   resize: none;
 }
-.contact__form__btn {
-  width: 100%;
-  background-color: var(--accent-700);
+.contact__form__btns {
+  display: flex;
+  gap: 1rem;
   margin-block-start: 2.1rem;
+}
+.contact__form__btns__submit {
+  flex: 1;
+  background-color: var(--accent-700);
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
-.contact__form__btn.sending {
+.contact__form__btns__submit.sending {
   background-color: var(--accent-300);
 }
-.contact__form__btn.success {
+.contact__form__btns__submit.success {
   background-color: var(--success);
 }
-.contact__form__btn.error {
+.contact__form__btns__submit.error {
   background-color: var(--danger);
   color: var(--accent-100);
 }
@@ -819,7 +833,7 @@ body {
     gap: 1rem;
   }
   .projects {
-    padding-block-end: 6rem;
+    padding-block-end: 6.5rem;
   }
   .projects__intro__text {
     max-width: 50ch;
@@ -829,7 +843,7 @@ body {
     height: 12.5rem;
   }
   .projects__btn {
-    margin-block-start: 5rem;
+    margin-block: 5rem 6.5rem;
   }
   .project {
     grid-template: repeat(5, auto)/repeat(2, 1fr);
@@ -864,6 +878,9 @@ body {
   .project:nth-child(odd) .project__preview {
     grid-column: 2;
   }
+  .project:nth-child(even) {
+    margin-inline: var(--border-size) 0;
+  }
   .project:nth-child(even) :is(.project__badge, .project__name, .project__desc, .project__stack, .project__links) {
     margin-inline-start: 3rem;
     grid-column: 2;
@@ -875,8 +892,8 @@ body {
   .contact {
     padding-block: 5rem;
   }
-  .contact__form__btn {
-    width: auto;
+  .contact__form__btns__submit {
+    flex: initial;
   }
 }
 @media screen and (width >= 64em) {
@@ -897,6 +914,9 @@ body {
   .about {
     grid-template: repeat(1, auto)/repeat(3, 1fr);
     grid-template-areas: "card-1 card-2 card-3";
+  }
+  .about__card:nth-child(1) {
+    margin-inline-end: 0;
   }
   .about__card:nth-child(1) header {
     display: block;

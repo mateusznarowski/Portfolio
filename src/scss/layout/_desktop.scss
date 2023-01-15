@@ -29,7 +29,6 @@
 
       scale: 1.35;
       translate: var(--x) var(--y);
-      // translate: 0 0;
     }
   }
 
@@ -39,8 +38,12 @@
     grid-template: repeat(1, auto) / repeat(3, 1fr);
     grid-template-areas: 'card-1 card-2 card-3';
 
-    &__card:nth-child(1) header {
-      display: block;
+    &__card:nth-child(1) {
+      margin-inline-end: 0;
+
+      & header {
+        display: block;
+      }
     }
   }
 }

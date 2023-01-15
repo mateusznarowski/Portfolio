@@ -12,28 +12,12 @@
   --border-size: 0.625rem;
 }
 
-//===// Scrollbar //===//
-
-// ::-webkit-scrollbar {
-//   width: 0.8rem;
-//   border-left: var(--line) solid color(dark-clr);
-//   outline: var(--line) solid color(accent);
-// }
-
-// ::-webkit-scrollbar-track {
-//   background: transparent;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   background: color(dark-clr);
-// }
-
 //===// Text selection //===//
 
-// ::selection {
-//   background-color: color(accent);
-//   color: color(light-clr);
-// }
+::selection {
+  background-color: color(type);
+  color: color(accent-300-l);
+}
 
 //===// Body //===//
 
@@ -213,6 +197,7 @@ body {
       background-color: color(accent-300);
       box-shadow: var(--border-size) var(--border-size) 0 color(accent-900);
       border: 1px solid color(accent-900);
+      margin-inline-end: var(--border-size);
     }
 
     &:nth-child(2) {
@@ -267,7 +252,7 @@ body {
 //===// Projects //===//
 
 .projects {
-  padding-block-end: 3rem;
+  padding-block-end: 3.5rem;
 
   &__intro {
     display: inline-block;
@@ -296,8 +281,12 @@ body {
   }
 
   &__btn {
-    margin-block-start: 4rem;
     margin-inline: auto;
+    margin-block-start: 4rem 3.5rem;
+  }
+
+  &:has(.projects__featured + .projects__btn) {
+    padding-block-end: 0rem;
   }
 }
 
@@ -314,6 +303,7 @@ body {
     'links';
 
   margin-block-start: 4rem;
+  margin-inline-end: var(--border-size);
 
   &:nth-child(3n + 1) {
     --accent: #{color(accent-300)};
@@ -489,23 +479,28 @@ body {
       resize: none;
     }
 
-    &__btn {
-      width: 100%;
-      background-color: color(accent-700);
+    &__btns {
+      display: flex;
+      gap: 1rem;
       margin-block-start: 2.1rem;
-      transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
-      &.sending {
-        background-color: color(accent-300);
-      }
+      &__submit {
+        flex: 1;
+        background-color: color(accent-700);
+        transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
-      &.success {
-        background-color: color(success);
-      }
+        &.sending {
+          background-color: color(accent-300);
+        }
 
-      &.error {
-        background-color: color(danger);
-        color: color(accent-100);
+        &.success {
+          background-color: color(success);
+        }
+
+        &.error {
+          background-color: color(danger);
+          color: color(accent-100);
+        }
       }
     }
   }
