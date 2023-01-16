@@ -73,7 +73,7 @@ body {
 
   &-close {
     position: absolute;
-    top: calc(var(--spacer) + 0.5625rem);
+    top: calc(var(--spacer) + 0.425rem);
     left: 1rem;
   }
 
@@ -187,7 +187,6 @@ body {
   display: grid;
   grid-template: repeat(3, auto) / 1fr;
   grid-template-areas: 'card-1' 'card-2' 'card-3';
-
   gap: 2rem;
   padding-block-end: 7rem;
 
@@ -195,8 +194,8 @@ body {
     &:nth-child(1) {
       grid-area: card-1;
       background-color: color(accent-300);
-      box-shadow: var(--border-size) var(--border-size) 0 color(accent-900);
       border: 1px solid color(accent-900);
+      box-shadow: var(--border-size) var(--border-size) 0 color(accent-900);
       margin-inline-end: var(--border-size);
     }
 
@@ -375,10 +374,10 @@ body {
     grid-area: preview;
 
     &__img {
+      height: 100%;
+      object-fit: cover;
       border: 1px solid color(type);
       border-radius: 0.5em;
-      object-fit: cover;
-      height: 100%;
     }
 
     &__drop {

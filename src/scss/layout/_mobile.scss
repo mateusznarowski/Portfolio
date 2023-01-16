@@ -25,9 +25,9 @@
 
     &__list {
       all: unset;
-      list-style: none;
       display: flex;
       gap: 1.25rem;
+      list-style: none;
 
       &-link {
         font-size: clamp(1.15rem, 2.6vw, 1.45rem);

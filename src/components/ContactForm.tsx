@@ -76,7 +76,9 @@ const ContactForm = ({ url }: { url: string }) => {
     if (!validateForm(message).isFormValid) return setStatusMessage(statusMessages.fullfill);
 
     setSendMessage(true);
-    setTimeout(() => setSendMessage(false), 0);
+    const stopFetching = setTimeout(() => setSendMessage(false), 100);
+
+    return () => clearTimeout(stopFetching);
   };
 
   const handleFormClear = () => {
