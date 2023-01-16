@@ -147,7 +147,7 @@ const ContactForm = ({ url }: { url: string }) => {
         </button>
 
         <button className='contact__form__btns__clear | btn btn--cta btn--icon' type='button' onClick={handleFormClear}>
-          <i className='fa-solid fa-arrows-rotate' />
+          <i className='fa-regular fa-trash-can' />
         </button>
       </div>
     </form>

@@ -55,9 +55,9 @@
       "name": "Ryszard Szurkowski",
       "desc": "A site about cyclist Ryszard Szurkowski.",
       "techStack": ["js", "html", "scss"],
-      "page": "https://szurkowski.mndev.eu",
+      "page": "https://ryszard-szurkowski.mndev.eu",
       "github": "https://github.mndev.eu/Project_RyszardSzurkowski",
-      "preview": ["szurkowski.png"]
+      "preview": ["ryszard-szurkowski.png"]
     },
     {
       "badge": "Vaccines",

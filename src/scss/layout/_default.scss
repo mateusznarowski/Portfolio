@@ -282,7 +282,7 @@ body {
 
   &__btn {
     margin-inline: auto;
-    margin-block-start: 4rem 3.5rem;
+    margin-block: 4rem;
   }
 
   &:has(.projects__featured + .projects__btn) {

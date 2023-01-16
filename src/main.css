@@ -70,8 +70,8 @@ body {
   --accent-300-d: hsl(176 40% 54%);
   --accent-700-l: hsl(41 98% 79%);
   --accent-700-d: hsl(41 98% 49%);
-  --success: hsl(106, 42%, 57.5%);
-  --danger: hsl(0, 68%, 57.5%);
+  --success: hsl(106 42% 57.5%);
+  --danger: hsl(0 68% 57.5%);
 }
 
 body.dark {
@@ -86,8 +86,8 @@ body.dark {
   --accent-300-d: hsl(151 24% 45%);
   --accent-700-l: hsl(37 79% 90%);
   --accent-700-d: hsl(37 79% 60%);
-  --success: hsl(106, 42%, 45%);
-  --danger: hsl(0, 58%, 45%);
+  --success: hsl(106 42% 45%);
+  --danger: hsl(0 58% 45%);
 }
 
 body {
@@ -620,7 +620,7 @@ body {
 }
 .projects__btn {
   margin-inline: auto;
-  margin-block-start: 4rem 3.5rem;
+  margin-block: 4rem;
 }
 .projects:has(.projects__featured + .projects__btn) {
   padding-block-end: 0rem;
