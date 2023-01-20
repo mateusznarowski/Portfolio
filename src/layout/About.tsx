@@ -1,3 +1,4 @@
+import Card from '../components/Card';
 import StackIcons from '../components/StackIcons';
 
 import { AboutProps } from '../types/TAbout';
@@ -9,29 +10,15 @@ const About = ({ content }: AboutProps) => {
     <section id='about'>
       <div className='container'>
         <div className='about'>
-          <article className='about__card | card'>
-            <header>
-              <span className='about__card__icon'>
-                <i className={techStack.icon} />
-              </span>
-              <h3 className='about__card__title'>{techStack.title}</h3>
-            </header>
-
+          <Card icon={techStack.icon} title={techStack.title} className='about__card'>
             <div className='about__card__stack'>
               {techStack.stack.map((icon, index) => (
                 <StackIcons icon={icon} key={index} />
               ))}
             </div>
-          </article>
+          </Card>
 
-          <article className='about__card | card'>
-            <header>
-              <span className='about__card__icon'>
-                <i className={certificates.icon} />
-              </span>
-              <h3 className='about__card__title'>{certificates.title}</h3>{' '}
-            </header>
-
+          <Card icon={certificates.icon} title={certificates.title} className='about__card'>
             <ul className='about__card__list'>
               {certificates.links.map((cert, index) => (
                 <li key={index}>
@@ -41,16 +28,9 @@ const About = ({ content }: AboutProps) => {
                 </li>
               ))}
             </ul>
-          </article>
+          </Card>
 
-          <article className='about__card | card'>
-            <header>
-              <span className='about__card__icon'>
-                <i className={other.icon} />
-              </span>
-              <h3 className='about__card__title'>{other.title}</h3>
-            </header>
-
+          <Card icon={other.icon} title={other.title} className='about__card'>
             {other.text.map((text, index) => (
               <p className='about__card__text' key={index}>
                 {text}
@@ -61,7 +41,7 @@ const About = ({ content }: AboutProps) => {
                 <StackIcons icon={icon} key={index} />
               ))}
             </div>
-          </article>
+          </Card>
         </div>
       </div>
     </section>
