@@ -1,25 +1,6 @@
 import StackIcons from '../components/StackIcons';
 
-type AboutProps = {
-  content: {
-    techStack: {
-      icon: string;
-      title: string;
-      stack: string[];
-    };
-    certificates: {
-      icon: string;
-      title: string;
-      links: { name: string; url: string }[];
-    };
-    other: {
-      icon: string;
-      title: string;
-      text: string[];
-      stack: string[];
-    };
-  };
-};
+import { AboutProps } from '../types/TAbout';
 
 const About = ({ content }: AboutProps) => {
   const { techStack, certificates, other } = content;

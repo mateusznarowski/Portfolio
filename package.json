@@ -4,10 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently npm:dev:*",
-    "dev:react": "vite --port 3000 --host",
-    "dev:scss": "sass --no-source-map --watch src/scss:src",
-    "build": "postcss src/*.css -u autoprefixer -r --no-map && tsc && vite build"
+    "dev": "vite --port 3000 --host",
+    "build": "tsc && vite build"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -22,8 +20,7 @@
     "@types/react-scroll": "^1.8.5",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.13",
-    "concurrently": "^7.6.0",
-    "postcss-cli": "^10.1.0",
+    "postcss": "^8.4.21",
     "sass": "^1.57.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"

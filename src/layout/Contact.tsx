@@ -2,31 +2,11 @@ import { useState } from 'react';
 import { useCopyToClipboard } from 'usehooks-ts';
 
 import ContactForm from '../components/ContactForm';
-
-type ContactProps = {
-  content: {
-    intro: {
-      title: string;
-      formText: string;
-      emailText: string;
-      linksText: string;
-    };
-    contact: {
-      email: string;
-      form: string;
-      github: string;
-      linkedin: string;
-      cv: {
-        polish: string;
-        english: string;
-      };
-    };
-  };
-};
+import { ContactProps } from '../types/TContact';
 
 const Contact = ({ content }: ContactProps) => {
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
-  const [value, copy] = useCopyToClipboard();
+  const [, copy] = useCopyToClipboard();
 
   const { intro, contact } = content;
 

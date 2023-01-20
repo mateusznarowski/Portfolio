@@ -1,18 +1,10 @@
 import { useState } from 'react';
+
 import Collapsible from '../components/Collapsible';
 import Project from '../components/Project';
-import { ProjectType } from '../types/projectType';
 
-type ProjectsProps = {
-  content: {
-    intro: {
-      title: string;
-      text: string;
-    };
-    numberOfFeatured: number;
-    projects: ProjectType[];
-  };
-};
+import { ProjectType } from '../types/components/TProject';
+import { ProjectsProps } from '../types/TProjects';
 
 const renderProjects = (array: ProjectType[]) => {
   return array.map((project, index) => <Project project={project} key={index} />);

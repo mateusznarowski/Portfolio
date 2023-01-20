@@ -1,8 +1,4 @@
-type HamburgerButtonProps = {
-  className?: string;
-  close?: boolean;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-};
+import { HamburgerButtonProps } from '../types/components/THamburgerButton';
 
 const HamburgerButton = ({ className, close, onClick }: HamburgerButtonProps) => {
   return (

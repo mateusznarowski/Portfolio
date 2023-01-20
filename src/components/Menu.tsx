@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Link as ScrollTo } from 'react-scroll';
 
-import HamburgerButton from './buttons/HamburgerButton';
+import HamburgerButton from './HamburgerButton';
 
 const Menu = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);

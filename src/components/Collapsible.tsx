@@ -1,11 +1,6 @@
-import { Dispatch, ReactNode, SetStateAction, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-type CollapsibleProps = {
-  className?: string;
-  isActive: boolean;
-  setIsActive: Dispatch<SetStateAction<boolean>>;
-  children: ReactNode;
-};
+import { CollapsibleProps } from '../types/components/TCollapsible';
 
 const Collapsible = ({ className, isActive, setIsActive, children }: CollapsibleProps) => {
   const collapse = useRef<HTMLDivElement>(null);

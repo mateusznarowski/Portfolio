@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import { ProjectType } from '../types/projectType';
-
 import TechIcons from './StackIcons';
 
-const Project = ({ project }: { project: ProjectType }) => {
+import { ProjectProps } from '../types/components/TProject';
+
+const Project = ({ project }: ProjectProps) => {
   const [mainPreview, secondPreview] = project.preview;
   const [preview, setPreview] = useState<string>(mainPreview);
 

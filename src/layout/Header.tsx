@@ -1,9 +1,4 @@
-import { useRef, useState } from 'react';
-
-import { Link as ScrollTo } from 'react-scroll';
-
-import HamburgerButton from '../components/buttons/HamburgerButton';
-import ScrollTop from '../components/buttons/ScrollTop';
+import ScrollTop from '../components/ScrollTop';
 import ChangeColorMode from '../components/ChangeColorMode';
 import Menu from '../components/Menu';
 

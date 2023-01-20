@@ -1,8 +1,10 @@
-import { Link as ScrollTo } from 'react-scroll';
-
 import { useEffect, useState } from 'react';
 
-const ScrollTop = ({ className, offset = 400 }: { className: string; offset?: number }) => {
+import { Link as ScrollTo } from 'react-scroll';
+
+import { ScrollTopProps } from '../types/components/TScrollTop';
+
+const ScrollTop = ({ className, offset = 400 }: ScrollTopProps) => {
   const [showScrollTop, setShowScrollTop] = useState<boolean>();
 
   useEffect(() => {

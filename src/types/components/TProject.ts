@@ -7,3 +7,7 @@ export type ProjectType = {
   github: string;
   preview: string[];
 };
+
+export type ProjectProps = {
+  project: ProjectType;
+};

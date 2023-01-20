@@ -4,7 +4,9 @@ import { useOnClickOutside } from 'usehooks-ts';
 
 import useDarkMode from '../hooks/useDarkMode';
 
-const ChangeColorMode = ({ className }: { className?: string }) => {
+import { ChangeColorModeProps } from '../types/components/TChangeColorMode';
+
+const ChangeColorMode = ({ className }: ChangeColorModeProps) => {
   const { modeState, isDarkActive, setDark, setLight, setSystem } = useDarkMode();
 
   const state = { dark: modeState === 'dark', light: modeState === 'light', system: modeState === 'system' };

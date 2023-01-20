@@ -1,4 +1,6 @@
-const Prop = ({ className }: { className?: string }) => {
+import { PropProps } from '../types/components/TProp';
+
+const Prop = ({ className }: PropProps) => {
   return (
     <svg viewBox='0 0 860 360' className={`${className} | prop`}>
       <g transform='translate(-72.758995,-325.36149)'>

@@ -1,16 +1,6 @@
 import Prop from '../components/Prop';
 
-type HeroProps = {
-  content: {
-    intro: string;
-    bio: string;
-    bioText: string[];
-  };
-  cv: {
-    polish: string;
-    english: string;
-  };
-};
+import { HeroProps } from '../types/THero';
 
 const Hero = ({ content, cv }: HeroProps) => {
   return (

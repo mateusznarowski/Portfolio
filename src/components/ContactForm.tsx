@@ -4,6 +4,8 @@ import useFetchMessage from '../hooks/useFetchMessage';
 
 import { testEmail } from '../utils/regex';
 
+import { ContactFormProps } from '../types/components/TContactForm';
+
 const statusMessages = {
   default: {
     text: 'Send',
@@ -32,7 +34,7 @@ const statusMessages = {
   },
 };
 
-const ContactForm = ({ url }: { url: string }) => {
+const ContactForm = ({ url }: ContactFormProps) => {
   const initialMessage = { name: '', email: '', message: '' };
   const initialMessageValidity = { name: true, email: true, message: true };
 
