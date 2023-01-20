@@ -2,8 +2,6 @@
 
 > ### [Page link](https://mndev.eu)
 
-&nbsp;
-
 #### The project was created with [Vite](https://vitejs.dev/), React with TypeScript + [SWC](https://github.com/vitejs/vite-plugin-react-swc) was used for the frontend, CSS was written using the SASS preprocessor and SCSS was used as the syntax of choice.
 
 - used icons:
