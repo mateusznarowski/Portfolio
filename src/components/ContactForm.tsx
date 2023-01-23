@@ -121,6 +121,7 @@ const ContactForm = ({ url }: ContactFormProps) => {
         placeholder='Your name'
         onChange={handleChange}
         value={message.name}
+        aria-label='Name input'
       />
 
       <input
@@ -131,6 +132,7 @@ const ContactForm = ({ url }: ContactFormProps) => {
         placeholder='you@company.com'
         onChange={handleChange}
         value={message.email}
+        aria-label='Email input'
       />
 
       <textarea
@@ -140,6 +142,7 @@ const ContactForm = ({ url }: ContactFormProps) => {
         placeholder='How I can help you...'
         onChange={handleChange}
         value={message.message}
+        aria-label='Message textarea'
       />
 
       <div className='contact__form__btns'>

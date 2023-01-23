@@ -2,7 +2,11 @@ import { PropProps } from '../types/components/TProp';
 
 const Prop = ({ className }: PropProps) => {
   return (
-    <svg viewBox='0 0 860 360' className={`${className} | prop`}>
+    <svg
+      viewBox='0 0 860 360'
+      className={`${className} | prop`}
+      aria-label='Graphic showing the frontend developer workstation'
+    >
       <g transform='translate(-72.758995,-325.36149)'>
         <g>
           <rect x='86.678001' y='648.30298' width='832.16199' height='18' rx='9' className='prop__desk' />

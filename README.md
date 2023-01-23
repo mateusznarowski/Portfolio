@@ -24,11 +24,15 @@
 
 - open graph tags (page preview in pasted link) in the head of the page,
 
+- available 'Skip to content' for keyboard navigation (pressing the TAB key for the first time on the page),
+
 - button in the header to change between modes (light, dark, system preference),
 
 - hook [useTernaryDarkMode](https://usehooks-ts.com/react-hook/use-ternary-dark-mode) was used to switch between modes, [useOnClickOutside](https://usehooks-ts.com/react-hook/use-on-click-outside) was used to hide mode selection.
 
 - links in the menu scrolling to the corresponding section with [react-scroll](https://www.npmjs.com/package/react-scroll),
+
+- a 'Scroll to top' button appears in the bottom right corner when the user scrolls the page a bit,
 
 - in the projects section, the button at the bottom is used to expand the section with unhighlighted projects,
 

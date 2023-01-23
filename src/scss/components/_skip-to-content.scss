@@ -1,0 +1,22 @@
+//===// Abstracts //===//
+
+@use '../abstracts' as *;
+
+//===// Scroll to content //===//
+
+.skip-to-content {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  background-color: color(accent-900);
+  border: none;
+  border-radius: 1em;
+  color: color(accent-100);
+  padding: 0.8em 1.2em;
+  translate: 0 -200%;
+  transition: translate 250ms ease-in-out;
+}
+
+.skip-to-content:focus {
+  translate: 0;
+}

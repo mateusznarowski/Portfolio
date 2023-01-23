@@ -17,10 +17,6 @@ ol {
   list-style: none;
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   height: 100%;
@@ -45,10 +41,6 @@ svg {
 //===// Reduce motion (System settings) //===//
 
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-import { Link as ScrollTo } from 'react-scroll';
+import useLockedBody from '../hooks/useLockedBody';
+
+import ScrollTo from './ScrollTo';
 
 import HamburgerButton from './HamburgerButton';
 
@@ -9,35 +11,35 @@ const Menu = () => {
   const closeMenu = () => setShowMenu(false);
   const openMenu = () => setShowMenu(true);
 
-  const scroll = { smooth: true, offset: -30, duration: 250 };
+  useLockedBody(showMenu, closeMenu);
 
   return (
     <>
+      <HamburgerButton className='nav-open' onClick={openMenu} />
+
+      {showMenu && <div className='nav-outside' onClick={closeMenu} aria-hidden />}
+
       <nav className={`nav ${showMenu ? 'nav--visible' : ''}`}>
         <HamburgerButton className='nav-close' close onClick={closeMenu} />
 
         <ul className='nav__list'>
           <li className='nav__list-item'>
-            <ScrollTo to='about' {...scroll} className='nav__list-link' onClick={closeMenu}>
+            <ScrollTo to='about' offset={-30} className='nav__list-link' onClick={closeMenu}>
               About
             </ScrollTo>
           </li>
           <li className='nav__list-item'>
-            <ScrollTo to='projects' {...scroll} className='nav__list-link' onClick={closeMenu}>
+            <ScrollTo to='projects' offset={-30} className='nav__list-link' onClick={closeMenu}>
               Projects
             </ScrollTo>
           </li>
           <li className='nav__list-item'>
-            <ScrollTo to='contact' {...scroll} offset={0} className='nav__list-link' onClick={closeMenu}>
+            <ScrollTo to='contact' className='nav__list-link' onClick={closeMenu}>
               Contact
             </ScrollTo>
           </li>
         </ul>
       </nav>
-
-      {showMenu && <div className='nav-outside' onClick={closeMenu} />}
-
-      <HamburgerButton className='nav-open' onClick={openMenu} />
     </>
   );
 };

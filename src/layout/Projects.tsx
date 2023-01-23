@@ -35,7 +35,11 @@ const Projects = ({ content }: ProjectsProps) => {
 
             {restOfProjects.length > 0 && (
               <>
-                <button className='projects__btn | btn btn--cta btn--icon' onClick={() => setIsShown((prev) => !prev)}>
+                <button
+                  className='projects__btn | btn btn--cta btn--icon'
+                  onClick={() => setIsShown((prev) => !prev)}
+                  aria-expanded={isShown}
+                >
                   {isShown ? 'Hide Projects' : 'See All Projects'}
                   <i className={`fa-solid fa-circle-chevron-${isShown ? 'up' : 'down'}`} />
                 </button>
